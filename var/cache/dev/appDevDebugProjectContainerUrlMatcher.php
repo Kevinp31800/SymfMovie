@@ -127,6 +127,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // createnewmovie
+        if ($pathinfo === '/create/newmovie') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::createNewMovieAction',  '_route' => 'createnewmovie',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }
